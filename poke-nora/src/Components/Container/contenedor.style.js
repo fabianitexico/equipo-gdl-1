@@ -26,3 +26,20 @@ export const Siguiente =styled.div`
     color: #e23636;
     line-height: 200px;
 `
+
+export const Boton = styled.button`
+margin-top: 200px;
+width: 150px;
+height: 150px;
+`
+
+export const PreguntaCont = styled.div`
+    color:black;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+    padding:10px;
+    text-align: center;
+    box-shadow: rgba(0,0,0,0.3) 0px 4px;
+` 
