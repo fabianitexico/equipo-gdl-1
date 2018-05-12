@@ -8,7 +8,7 @@ class App extends Component {
 constructor(){
   super()
   this.state={
-    numeroPoke1: Math.floor((Math.random() * 150) + 1),
+    numeroPoke1: Math.floor((Math.random() * 151) + 1),
     numeroPoke2: Math.floor((Math.random() * 151) + 1),
   };
   this.Refresh = this.Refresh.bind(this)
@@ -17,8 +17,8 @@ constructor(){
 
   Refresh(){
     this.setState({
-      numeroPoke1: Math.floor((Math.random() * 150) + 1),
-      numeroPoke2: Math.floor((Math.random() * 150) + 1),
+      numeroPoke1: Math.floor((Math.random() * 151) + 1),
+      numeroPoke2: Math.floor((Math.random() * 151) + 1),
     })
   }
 

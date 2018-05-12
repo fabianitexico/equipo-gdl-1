@@ -7,7 +7,7 @@ export const Tarjeta = styled.div`
     color:#000;
     background-color:lightgray;
     transition: all 300ms ease;
-    height: 400px;
+    height: 450px;
     width: 300px;
     margin: 40px;
     border-radius: 7px 7px 7px 7px;
@@ -27,12 +27,6 @@ export const Siguiente =styled.div`
     line-height: 200px;
 `
 
-export const Boton = styled.button`
-margin-top: 200px;
-width: 150px;
-height: 150px;
-`
-
 export const PreguntaCont = styled.div`
     color:black;
     background-color: white;
@@ -43,3 +37,13 @@ export const PreguntaCont = styled.div`
     text-align: center;
     box-shadow: rgba(0,0,0,0.3) 0px 4px;
 ` 
+
+export const Boton =styled.button`
+    width: 150px;
+   font-size: 15px;
+   padding: 5px;
+   border: none;
+   background: #000;
+   color: #fff;
+   cursor: pointer;
+`

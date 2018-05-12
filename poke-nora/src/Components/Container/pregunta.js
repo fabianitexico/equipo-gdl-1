@@ -24,7 +24,7 @@ class Pregunta extends Component {
 
     return (
       <PreguntaCont>
-            <h2>{this.state.array[Math.floor((Math.random() * 11) + 1)]}</h2>
+            <h2>{this.state.array[Math.floor((Math.random() * 10) + 1)]}</h2>
       </PreguntaCont>         
     );
   }

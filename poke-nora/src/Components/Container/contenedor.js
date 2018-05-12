@@ -9,16 +9,23 @@ class PokeContainer extends Component {
       body:"",
       name: "",
       image:'',
-      localNumber: this.props.numero
+      contador: 0,
+      // JsonPokemon:{
+      //   name: this.name,
+      //   numeroPoke: this.numero,
+      //   image: this.image,
+      //   counter: this.Contador
+      // }
     };
 
     this.NameSolicitud = this.NameSolicitud.bind(this);
     this.ImageSolictud = this.ImageSolictud.bind(this);
+    this.SaveCounter = this.SaveCounter.bind(this)
 
   }
 
   NameSolicitud() {
-    var url = "https://pokeapi.co/api/v2/pokemon/" + this.state.localNumber;
+    var url = "https://pokeapi.co/api/v2/pokemon/" + this.props.numero;
     Request.get(url).then((response) => {
       this.setState({
         name: response.body.name.charAt(0).toUpperCase() + response.body.name.slice(1),
@@ -27,7 +34,7 @@ class PokeContainer extends Component {
   }
 
   ImageSolictud() {
-    var url = "https://pokeapi.co/api/v2/pokemon/" + this.state.localNumber;
+    var url = "https://pokeapi.co/api/v2/pokemon/" + this.props.numero;
     Request.get(url).then((response) => {
       this.setState({
         image: response.body.sprites.front_default
@@ -35,16 +42,14 @@ class PokeContainer extends Component {
     });
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      localNumber: this.props.numero
-    });
-
-    this.NameSolicitud();
-    this.ImageSolictud();
+  SaveCounter(event){
+    ++ this.state.contador
+    event.preventDefault()
   }
 
-  componentWillMount() {
+
+
+  componentWillMount(){
     this.NameSolicitud();
     this.ImageSolictud();
   }
@@ -54,6 +59,8 @@ class PokeContainer extends Component {
       <TarjetaContainer 
         nombre={this.state.name} 
         imagen={this.state.image}
+        save={this.SaveCounter}
+        numero={this.state.contador}
       />
     );
   }
